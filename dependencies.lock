@@ -1,0 +1,136 @@
+dependencies:
+  esp_rtl_sdr:
+    component_hash: dc6721db9c2c4e4103271629b79543bb69fae046cde15b530ae0d8368b1677e1
+    dependencies:
+    - name: idf
+      version: '>=5.5.0'
+    source:
+      git: https://github.com/hardcoreerik/esp-rtl-sdr.git
+      path: .
+      type: git
+    targets:
+    - esp32p4
+    version: 1cd19d1363daea49b013c2d28a25750fcbfcff78
+  espressif/eppp_link:
+    component_hash: c1369b37f2b0b427b198ae14e07e7547d3da92b95fe4dc7f949e5de560b35f21
+    dependencies:
+    - name: espressif/esp_serial_slave_link
+      registry_url: https://components.espressif.com
+      require: private
+      version: ^1.1.0
+    - name: idf
+      require: private
+      version: '>=5.2'
+    source:
+      registry_url: https://components.espressif.com
+      type: service
+    version: 1.1.6
+  espressif/esp-dsp:
+    component_hash: ed9ac175b14e0414399a2b33c525579414b5bad19a2a67b12ea212def96f9a98
+    dependencies:
+    - name: idf
+      require: private
+      version: '>=4.2'
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 1.8.2
+  espressif/esp_hosted:
+    component_hash: 29069693948fba65d3b45012778d49a36a751fc2d2d7760f82e39f685fc0dbcb
+    dependencies:
+    - name: idf
+      require: private
+      version: '>=5.5'
+    source:
+      registry_url: https://components.espressif.com
+      type: service
+    targets:
+    - esp32
+    - esp32c2
+    - esp32s2
+    - esp32s3
+    - esp32c3
+    - esp32c5
+    - esp32c6
+    - esp32c61
+    - esp32h2
+    - esp32h4
+    - esp32h21
+    - esp32p4
+    version: 3.0.7
+  espressif/esp_serial_slave_link:
+    component_hash: ac1776806de0a6e371c84e87898bb983e19ce62aa7f1e2e5c4a3b0234a575d2c
+    dependencies:
+    - name: idf
+      require: private
+      version: '>=5.0'
+    source:
+      registry_url: https://components.espressif.com
+      type: service
+    version: 1.1.2
+  espressif/esp_wifi_remote:
+    component_hash: 50d3beaf95c0bc47d0fcf56752beaf3cbaae981fd8c3b74d6890b45d8be689fe
+    dependencies:
+    - name: espressif/esp_hosted
+      registry_url: https://components.espressif.com
+      require: private
+      rules:
+      - if: target in [esp32h2, esp32p4]
+      version: '>=2.11'
+    - name: espressif/wifi_remote_over_eppp
+      registry_url: https://components.espressif.com
+      require: private
+      version: '>=0.1'
+    - name: idf
+      require: private
+      version: '>=5.3'
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 1.6.4
+  espressif/wifi_remote_over_eppp:
+    component_hash: 1fd6968af20f0b19e421f6b519b0a8caf81d689afc3783b564c28559e45f66ef
+    dependencies:
+    - name: espressif/eppp_link
+      registry_url: https://components.espressif.com
+      require: private
+      version: '>=0.1'
+    - name: idf
+      require: private
+      version: '>=5.3'
+    source:
+      registry_url: https://components.espressif.com
+      type: service
+    version: 0.3.3
+  idf:
+    source:
+      type: idf
+    version: 5.5.4
+  m5stack/m5gfx:
+    component_hash: b07a5242ed42389520da0ef969e38d85168398ac21bdc80ea621ca887b09f904
+    dependencies: []
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 0.2.27
+  m5stack/m5unified:
+    component_hash: c724c46511f68cdef357956fb797af558644be707c9adeabd83fce8ce8c8b992
+    dependencies:
+    - name: m5stack/m5gfx
+      registry_url: https://components.espressif.com
+      require: private
+      version: '>=0.2.27'
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 0.2.20
+direct_dependencies:
+- esp_rtl_sdr
+- espressif/esp-dsp
+- espressif/esp_wifi_remote
+- idf
+- m5stack/m5gfx
+- m5stack/m5unified
+manifest_hash: f61e156655e81fd40b9af97abe8a247aba7418088d32491bea563ae00b6b27df
+target: esp32p4
+version: 2.0.0
